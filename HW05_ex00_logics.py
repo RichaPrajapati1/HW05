@@ -11,19 +11,51 @@ def even_odd():
         Prints determination
         returns None
     """
-    pass
+    num_input = raw_input("Enter a number: ")
+    try:
+        num = int(num_input)
+    except:
+        print("Enter a valid number!")
+    else:
+        if num%2 == 0:
+            print("The number is even")
+        else:
+            print("The number is odd")
 
 
 def ten_by_ten():
     """ Prints integers 1 through 100 sequentially in a ten by ten grid."""
-    pass
+    num = 1
+    for row in range(10):
+        for column in range(10):
+            if num <= 10:
+                print str(num) +' ',
+            else:
+                print num,
+            num += 1
+        print ('')
+
 
 
 def find_average():
     """ Takes numeric input (non-word numerals) from the user, one number
     at a time. Once the user types 'done', returns the average.
     """
-    pass
+    sum_num = 0
+    count = 0
+    num_input = raw_input("Enter a number: ")
+    while num_input != 'done':
+        sum_num += int(num_input)
+        count += 1
+        num_input = raw_input("Enter another number: ")
+    if count != 0:
+        avg = float(sum_num)/count
+    else:
+        avg = 0
+    print ("Average is: %.2f") % (avg)
+
+
+
 
 ##############################################################################
 def main():
@@ -33,7 +65,9 @@ def main():
     Prints the following function:
         - find_average()
     """
-    pass
+    # even_odd()
+    # ten_by_ten()
+    find_average()
 
 if __name__ == '__main__':
     main()
